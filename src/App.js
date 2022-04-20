@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+//  import User from './components/User';
+import Header from './components/Header'
+import { useEffect, useMemo, useState } from 'react';
+import axios from 'axios';
+import Table from './components/Table';
+import Indicator from './components/Indicator';
+import ResponsiveAppBar from './components/ResponsiveAppBar';
 
 function App() {
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="table-container">
+      <ResponsiveAppBar/>
+      <Indicator/>
+      {/* <User/> */}
+
+      {/* {loading ? (
+        <span> loading... </span>
+      ): (
+       <Table columns={columns} data={products} />
+      )}*/}
+    </div> 
   );
 }
 

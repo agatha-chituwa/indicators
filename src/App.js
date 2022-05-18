@@ -13,7 +13,9 @@ function App() {
   return (
     <div className="table-container">
       <ResponsiveAppBar/>
-      <Indicator/>
+  
+      <br/>
+      <Table/>
       {/* <User/> */}
 
       {/* {loading ? (

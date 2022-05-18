@@ -1,35 +1,46 @@
 import React from 'react'
-import { useExpanded, useGroupBy, useSortBy, useTable } from 'react-table';
+import Indicator from "./Indicator"
+import IndicatorGroup from './IndicatorGroup'
+import Post from './Post'
 
-function Table({columns, data}) {
-    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({ columns, data }, useGroupBy, useSortBy, useExpanded);
+
+function Table() {
   return (
-    <table {...getTableProps()}>
-            
-      <thead>
-        {headerGroups.map((headerGroup) => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                {column.canGroupBy && column.id === 'category' ? (
-                  <span {...column.getGroupByToggleProps()}>
-                    {' '}
-                    {column.isGrouped ? '+ ' : '- '}
-                  </span>
-                ) : null}
 
-                {column.render('Header')}
-                <span>
-                  {column.isSorted ? (column.isSortedDesc ? ' ▼' : ' ▲') : ''}
-                </span>
-              </th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-    </table>
+               
+              <div className="container">
+              <div className="row">
+                <div className="col">
+                <div>
+                      <div className="card" >
+                      
+                            <div className="card-body">
+                              create indicatorGroup
+                              <br/>
+                              <IndicatorGroup/>
+                      
+                              </div>
+                      </div>
+             </div>
+                </div>
+                <div className="col">
+                <div>
+                      <div className="card" >
+                      
+                            <div className="card-body">
+                              create indicatorGroupset
+                              <Post/>
+                      
+                              </div>
+                      </div>
+             </div>
+                </div>
+             
+              </div>
+              </div>
+             
   )
 }
 
 export default Table
+
